@@ -26,7 +26,7 @@ pipeline {
         // http://localhost:8080/pipeline-syntax/globals#env
         echo "Running Tests"
         echo "The environment variable for this stage is: ${ENV_VAR_PSRNL}"
-        sh 'go tests -cover'
+        sh 'go test -cover'
       }
     }
   }
