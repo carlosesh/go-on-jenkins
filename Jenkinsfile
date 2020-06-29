@@ -5,7 +5,7 @@ pipeline {
     }
   }
   environment { 
-      HOME = '.', 
+      HOME = '.'
       ENV_VAR_PSRNL = 'HI! This is the ENV VAR'
   }
 
