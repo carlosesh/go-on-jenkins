@@ -7,7 +7,6 @@ pipeline {
   environment { HOME = '.' }
 
   stages {
-    // first stage installs node dependencies and Cypress binary
     stage('Build') {
       steps {
         // there a few default environment variables on Jenkins
