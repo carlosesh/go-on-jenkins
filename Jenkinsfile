@@ -6,13 +6,13 @@ pipeline {
     environment {
         GO111MODULE = 'on'
     }
-    stages {
-		container('builder-go') {
+	container('builder-go') {
+		stages {
 			stage('Build') {
 				steps {
 					sh 'go build'
 				}
 			}
 		}
-    }
+	}
 }
