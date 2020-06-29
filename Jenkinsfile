@@ -4,7 +4,10 @@ pipeline {
       image 'golang:1.14-alpine'
     }
   }
-  environment { HOME = '.' }
+  environment { 
+      HOME = '.', 
+      ENV_VAR_PSRNL = 'HI! This is the ENV VAR'
+  }
 
   stages {
     stage('Build') {
@@ -18,9 +21,6 @@ pipeline {
     }
     stage('Test') {
       steps {
-          environment { 
-              ENV_VAR_PSRNL = 'HI! This is the ENV VAR' 
-          }
         // there a few default environment variables on Jenkins
         // on local Jenkins machine (assuming port 8080) see
         // http://localhost:8080/pipeline-syntax/globals#env
