@@ -1,3 +1,3 @@
-@Library('go-project')
+@Library('go-project') _
 
 standard()
