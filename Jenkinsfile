@@ -3,6 +3,9 @@ pipeline {
     docker {
       image 'golang:1.14-alpine'
     }
+    environment {
+        HOME = '.'
+    }
   }
 
   stages {
