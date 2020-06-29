@@ -7,10 +7,12 @@ pipeline {
         GO111MODULE = 'on'
     }
     stages {
-        stage('Build') {
-            steps {
-                sh 'go build'
-            }
-        }
+		container('builder-go') {
+			stage('Build') {
+				steps {
+					sh 'go build'
+				}
+			}
+		}
     }
 }
