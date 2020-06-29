@@ -3,10 +3,8 @@ pipeline {
     docker {
       image 'golang:1.14-alpine'
     }
-    environment {
-        HOME = '.'
-    }
   }
+  environment { HOME = '.' }
 
   stages {
     // first stage installs node dependencies and Cypress binary
