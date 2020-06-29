@@ -16,5 +16,18 @@ pipeline {
         sh 'go build'
       }
     }
+    stage('Test') {
+      steps {
+          environment { 
+              ENV_VAR_PSRNL = 'HI! This is the ENV VAR' 
+          }
+        // there a few default environment variables on Jenkins
+        // on local Jenkins machine (assuming port 8080) see
+        // http://localhost:8080/pipeline-syntax/globals#env
+        echo "Running Tests"
+        echo "The environment variable for this stage is " + $ENV_VAR_PSRNL
+        sh 'go tests ./... -coverprofile=coverage.txt'
+      }
+    }
   }
 }
